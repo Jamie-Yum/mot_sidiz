@@ -4,7 +4,7 @@ import pandas as pd
 from pathlib import Path
 
 EXCEL_PATH    = Path(__file__).parent / "AS 현황_시디즈.xlsx"
-OUTPUT_PATH   = Path(__file__).parent / "AS_대시보드.html"
+OUTPUT_PATH   = Path(__file__).parent / "index.html"
 TEMPLATE_PATH = Path(__file__).parent / "AS_대시보드_template.html"
 
 
