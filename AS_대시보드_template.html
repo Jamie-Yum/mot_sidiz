@@ -2568,9 +2568,17 @@ function renderSec3() {
     DATA.cs.forEach(it => it.amounts.forEach((v,i) => tot[i] += v));
     const totalAll = tot.reduce((a,b)=>a+b, 0);
     const trT = document.createElement('tr');
-    trT.innerHTML = `<td>합계</td>` + tot.map(v => `<td>${Math.round(v/10000).toLocaleString()}</td>`).join('')
-                    + `<td>${Math.round(totalAll/10000).toLocaleString()}</td>`;
+    trT.innerHTML = `<td><b>합계</b></td>` + tot.map(v => `<td><b>${Math.round(v/10000).toLocaleString()}</b></td>`).join('')
+                    + `<td><b>${Math.round(totalAll/10000).toLocaleString()}</b></td>`;
     tbody.appendChild(trT);
+    if (DATA.csDaily && DATA.csDaily.length) {
+      const trD = document.createElement('tr');
+      trD.style.color = 'var(--ink-3)';
+      trD.innerHTML = `<td>일 평균 비용 (원)</td>` +
+        DATA.csDaily.map(v => `<td>${Math.round(v).toLocaleString()}</td>`).join('') +
+        `<td>-</td>`;
+      tbody.appendChild(trD);
+    }
   }
 }
 
@@ -3184,20 +3192,7 @@ window.__rebuildCharts = null;
       <span class="ui-panel-title">알림</span>
       <button class="ui-panel-close" data-close="overlay-notif">✕</button>
     </div>
-    <div class="ui-panel-body" id="notif-body">
-      <div class="notif-item">
-        <div class="notif-dot"></div>
-        <div><div class="notif-text"><b>주간 퍼널 데이터</b> 업데이트 필요 — 이번 주 Looker Studio 데이터를 아직 입력하지 않았습니다.</div><div class="notif-time">매주 월요일</div></div>
-      </div>
-      <div class="notif-item">
-        <div class="notif-dot read"></div>
-        <div><div class="notif-text"><b>4월 AS 조치 현황</b> 데이터가 반영되었습니다.</div><div class="notif-time">2026.05.01</div></div>
-      </div>
-      <div class="notif-item">
-        <div class="notif-dot read"></div>
-        <div><div class="notif-text"><b>컨택센터 용역료</b> 4월 데이터가 반영되었습니다.</div><div class="notif-time">2026.04.30</div></div>
-      </div>
-    </div>
+    <div class="ui-panel-body" id="notif-body"><!-- NOTIF_PLACEHOLDER --></div>
   </div>
 </div>
 

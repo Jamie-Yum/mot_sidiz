@@ -102,7 +102,7 @@ def read_cs_cost():
         items.append({"name": labels[i], "counts": cnt, "amounts": amounts})
     totals    = [sum(it["amounts"][m] for it in items) for m in range(3)]
     biz_days  = []
-    for col in [8, 10, 12]:
+    for col in [6, 8, 10]:
         v = df.iloc[3, col] if col < len(df.columns) else None
         biz_days.append(int(v) if (v is not None and pd.notna(v)) else 1)
     daily_avg = [t / d if d else 0 for t, d in zip(totals, biz_days)]
@@ -296,7 +296,7 @@ def build_html(nat, seoul, contact, funnel, cs):
 
     # Inject notifications into panel
     tmpl = re.sub(
-        r'(<div class="ui-panel-body" id="notif-body">)[\s\S]*?(</div>)',
+        r'(<div class="ui-panel-body" id="notif-body">)<!-- NOTIF_PLACEHOLDER -->(</div>)',
         rf'\g<1>\n{notif_html}\g<2>',
         tmpl
     )
