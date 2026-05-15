@@ -1146,11 +1146,7 @@ table.mtx {
     <div class="sb-section">
       <div class="sb-label">바로가기</div>
       <div class="sb-nav">
-        <button class="sb-item" id="btn-refresh">
-          <svg class="sb-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-9 8.5 8.5 8.5 0 0 1-7.6-11.95L3 21l1.85-1.4"/><path d="M21 3v6h-6"/></svg>
-          <span>원천 데이터 갱신</span>
-        </button>
-        <button class="sb-item" id="btn-export">
+<button class="sb-item" id="btn-export">
           <svg class="sb-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
           <span>리포트 내보내기</span>
         </button>
@@ -3682,33 +3678,6 @@ window.__rebuildCharts = null;
   </div>
 </div>
 
-<!-- 원천 데이터 갱신 오버레이 -->
-<div class="ui-overlay" id="overlay-refresh">
-  <div class="ui-panel">
-    <div class="ui-panel-head">
-      <span class="ui-panel-title">원천 데이터 갱신 방법</span>
-      <button class="ui-panel-close" data-close="overlay-refresh">✕</button>
-    </div>
-    <div class="ui-panel-body">
-      <div class="refresh-step">
-        <div class="refresh-step-num">1</div>
-        <div class="refresh-step-text">Looker Studio에서 전주 AS 퍼널 데이터 확인<br><span style="color:var(--ink-4);font-size:11.5px">매주 월요일 조회</span></div>
-      </div>
-      <div class="refresh-step">
-        <div class="refresh-step-num">2</div>
-        <div class="refresh-step-text"><code>update_weekly_funnel.py</code> 실행하여 Excel 업데이트<br><span style="color:var(--ink-4);font-size:11.5px">python update_weekly_funnel.py --period "5.18~5.24" --reg … --view … 등</span></div>
-      </div>
-      <div class="refresh-step">
-        <div class="refresh-step-num">3</div>
-        <div class="refresh-step-text"><code>generate_dashboard.py</code> 실행하여 대시보드 재생성</div>
-      </div>
-      <div class="refresh-step">
-        <div class="refresh-step-num">4</div>
-        <div class="refresh-step-text">GitHub에 <code>git push</code> → GitHub Pages 자동 배포</div>
-      </div>
-    </div>
-  </div>
-</div>
 
 <!-- 토스트 -->
 <div class="toast" id="toast"></div>
@@ -3754,7 +3723,6 @@ function setTheme(theme) {
 }
 
 // ── 버튼 바인딩 ──────────────────────────────────────────────
-document.getElementById('btn-refresh').addEventListener('click', () => openOverlay('overlay-refresh'));
 document.getElementById('btn-export').addEventListener('click', () => { showToast('인쇄 창을 엽니다…'); setTimeout(doPrint, 400); });
 document.getElementById('btn-settings').addEventListener('click', () => {
   const months = DATA.natMonths;
