@@ -3,9 +3,10 @@ import json
 import pandas as pd
 from pathlib import Path
 
-EXCEL_PATH    = Path(__file__).parent / "AS 현황_시디즈.xlsx"
-OUTPUT_PATH   = Path(__file__).parent / "index.html"
-TEMPLATE_PATH = Path(__file__).parent / "AS_대시보드_template.html"
+EXCEL_PATH         = Path(__file__).parent / "AS 현황_시디즈.xlsx"
+OUTPUT_PATH        = Path(__file__).parent / "index.html"
+TEMPLATE_PATH      = Path(__file__).parent / "AS_대시보드_template.html"
+NOTIFICATIONS_PATH = Path(__file__).parent / "notifications.json"
 
 
 # ── Excel readers ──────────────────────────────────────────────────────────────
@@ -255,6 +256,20 @@ def build_html(nat, seoul, contact, funnel, cs):
   {{label: "서울경인 평균 조치",   value: {round(float(ls["평균조치기간"]),2)}, unit: "일", trend: {t_sd}, dir: "{_kpi_dir_low(t_sd)}", comp: "전월 대비 (낮을수록 좋음)", series: DATA.seDays, cls: ""}},
 ];"""
 
+    # ── Notifications ─────────────────────────────────────────────────────────
+    notifs = json.loads(NOTIFICATIONS_PATH.read_text(encoding="utf-8")) if NOTIFICATIONS_PATH.exists() else []
+    notif_html = ""
+    for n in notifs:
+        dot_cls = "notif-dot" if not n.get("read") else "notif-dot read"
+        notif_html += (
+            f'<div class="notif-item">'
+            f'<div class="{dot_cls}"></div>'
+            f'<div><div class="notif-text">{n["text"]}</div>'
+            f'<div class="notif-time">{n["time"]}</div></div>'
+            f'</div>\n'
+        )
+    notif_badge = sum(1 for n in notifs if not n.get("read"))
+
     # ── Read template and inject ───────────────────────────────────────────────
     tmpl = TEMPLATE_PATH.read_text(encoding="utf-8")
 
@@ -278,6 +293,22 @@ def build_html(nat, seoul, contact, funnel, cs):
         rf'\g<1>{latest_month}\g<2>',
         tmpl
     )
+
+    # Inject notifications into panel
+    tmpl = re.sub(
+        r'(<div class="ui-panel-body" id="notif-body">)[\s\S]*?(</div>)',
+        rf'\g<1>\n{notif_html}\g<2>',
+        tmpl
+    )
+
+    # Update notification badge dot visibility
+    if notif_badge > 0:
+        tmpl = tmpl.replace(
+            '<span class="tb-dot"></span>',
+            '<span class="tb-dot" style="background:var(--accent)"></span>'
+        )
+    else:
+        tmpl = tmpl.replace('<span class="tb-dot"></span>', '')
 
     return tmpl
 
