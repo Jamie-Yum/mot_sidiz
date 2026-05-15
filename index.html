@@ -1146,15 +1146,15 @@ table.mtx {
     <div class="sb-section">
       <div class="sb-label">바로가기</div>
       <div class="sb-nav">
-        <button class="sb-item">
+        <button class="sb-item" id="btn-refresh">
           <svg class="sb-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-9 8.5 8.5 8.5 0 0 1-7.6-11.95L3 21l1.85-1.4"/><path d="M21 3v6h-6"/></svg>
           <span>원천 데이터 갱신</span>
         </button>
-        <button class="sb-item">
+        <button class="sb-item" id="btn-export">
           <svg class="sb-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
           <span>리포트 내보내기</span>
         </button>
-        <button class="sb-item">
+        <button class="sb-item" id="btn-settings">
           <svg class="sb-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg>
           <span>설정</span>
         </button>
@@ -1162,10 +1162,10 @@ table.mtx {
     </div>
 
     <div class="sb-foot">
-      <div class="sb-avatar">윤</div>
+      <div class="sb-avatar">염</div>
       <div>
-        <div class="sb-user">윤기태</div>
-        <div class="sb-user-sub">CX 운영팀 · 분석</div>
+        <div class="sb-user">염제명</div>
+        <div class="sb-user-sub">옴니채널운영팀</div>
       </div>
     </div>
   </aside>
@@ -1183,21 +1183,21 @@ table.mtx {
         <strong id="crumb-page">Overview</strong>
       </div>
       <div class="tb-right">
-        <button class="tb-btn">
+        <button class="tb-btn" id="btn-date">
           <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-          <span>2026년 4월</span>
+          <span id="tb-date-label">2026년 4월</span>
           <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
         </button>
-        <button class="tb-btn">
+        <button class="tb-btn" id="btn-export-top">
           <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
           내보내기
         </button>
         <div class="tb-divider"></div>
-        <button class="tb-icon-btn" title="알림">
+        <button class="tb-icon-btn" id="btn-notif" title="알림">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 0 1-3.4 0"/></svg>
           <span class="tb-dot"></span>
         </button>
-        <button class="tb-icon-btn" title="검색">
+        <button class="tb-icon-btn" id="btn-search" title="검색">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><line x1="20" y1="20" x2="16.65" y2="16.65"/></svg>
         </button>
       </div>
@@ -3556,6 +3556,262 @@ function rebuildAll() {
   hidden.forEach(el => { el.style.display = 'none'; });
 }
 window.__rebuildCharts = null;
+</script>
+
+<!-- =====================================================
+     UI OVERLAYS (검색 / 설정 모달 / 알림 / 토스트)
+     ===================================================== -->
+<style>
+/* ── 공통 오버레이 ── */
+.ui-overlay{position:fixed;inset:0;z-index:900;display:flex;align-items:flex-start;justify-content:center;padding-top:80px;background:rgba(26,25,22,0.45);backdrop-filter:blur(4px);opacity:0;pointer-events:none;transition:opacity .18s}
+.ui-overlay.open{opacity:1;pointer-events:all}
+.ui-panel{background:var(--surface);border:1px solid var(--border);border-radius:14px;box-shadow:0 8px 40px rgba(0,0,0,0.14);width:100%;max-width:520px;overflow:hidden;transform:translateY(-8px);transition:transform .18s}
+.ui-overlay.open .ui-panel{transform:translateY(0)}
+.ui-panel-head{display:flex;align-items:center;justify-content:space-between;padding:16px 20px;border-bottom:1px solid var(--border)}
+.ui-panel-title{font-size:14px;font-weight:600;color:var(--ink)}
+.ui-panel-close{appearance:none;border:0;background:transparent;color:var(--ink-3);font-size:18px;cursor:pointer;line-height:1;padding:2px 6px;border-radius:6px}
+.ui-panel-close:hover{background:var(--surface-3);color:var(--ink)}
+.ui-panel-body{padding:16px 20px}
+
+/* ── 검색 ── */
+.search-input-wrap{display:flex;align-items:center;gap:10px;background:var(--surface-2);border:1.5px solid var(--border);border-radius:10px;padding:10px 14px}
+.search-input-wrap svg{color:var(--ink-3);flex-shrink:0}
+.search-input{flex:1;border:0;background:transparent;font:inherit;font-size:14px;color:var(--ink);outline:none}
+.search-input::placeholder{color:var(--ink-4)}
+.search-results{margin-top:12px;display:flex;flex-direction:column;gap:4px;max-height:320px;overflow-y:auto}
+.search-result-item{padding:10px 12px;border-radius:8px;cursor:pointer;font-size:13px;color:var(--ink-2)}
+.search-result-item:hover{background:var(--surface-2)}
+.search-result-item b{color:var(--ink);font-weight:600}
+.search-result-item span{color:var(--ink-3);font-size:11.5px;margin-left:8px}
+.search-empty{color:var(--ink-3);font-size:13px;padding:12px 0;text-align:center}
+
+/* ── 설정 ── */
+.settings-row{display:flex;align-items:center;justify-content:space-between;padding:12px 0;border-bottom:1px solid var(--border-soft)}
+.settings-row:last-child{border-bottom:0}
+.settings-label{font-size:13.5px;color:var(--ink);font-weight:500}
+.settings-sub{font-size:11.5px;color:var(--ink-3);margin-top:2px}
+.toggle-wrap{display:flex;gap:6px}
+.seg-pill{appearance:none;border:1.5px solid var(--border);background:transparent;color:var(--ink-3);font:inherit;font-size:12px;font-weight:500;padding:5px 14px;border-radius:20px;cursor:pointer;transition:all .12s}
+.seg-pill.on{background:var(--accent);border-color:var(--accent);color:#fff}
+
+/* ── 알림 패널 ── */
+.notif-item{display:flex;gap:12px;align-items:flex-start;padding:12px 0;border-bottom:1px solid var(--border-soft)}
+.notif-item:last-child{border-bottom:0}
+.notif-dot{width:8px;height:8px;border-radius:50%;background:var(--accent);flex-shrink:0;margin-top:4px}
+.notif-dot.read{background:var(--border-strong)}
+.notif-text{font-size:13px;color:var(--ink-2);line-height:1.5}
+.notif-text b{color:var(--ink);font-weight:600}
+.notif-time{font-size:11px;color:var(--ink-4);margin-top:3px}
+
+/* ── 원천데이터 갱신 패널 ── */
+.refresh-step{display:flex;gap:12px;align-items:flex-start;padding:10px 0}
+.refresh-step-num{width:22px;height:22px;border-radius:50%;background:var(--accent);color:#fff;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+.refresh-step-text{font-size:13px;color:var(--ink-2);line-height:1.5}
+.refresh-step-text code{font-family:'JetBrains Mono',monospace;font-size:11.5px;background:var(--surface-2);padding:1px 6px;border-radius:4px;color:var(--ink);border:1px solid var(--border)}
+
+/* ── 토스트 ── */
+.toast{position:fixed;bottom:28px;left:50%;transform:translateX(-50%) translateY(10px);background:var(--ink);color:#F4EFE3;font-size:13px;padding:10px 20px;border-radius:10px;z-index:9999;opacity:0;pointer-events:none;transition:all .2s;white-space:nowrap}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+
+/* ── 인쇄 ── */
+@media print{.sb,.topbar{display:none!important}.main-col{grid-column:1!important}.section{display:block!important}}
+</style>
+
+<!-- 검색 오버레이 -->
+<div class="ui-overlay" id="overlay-search">
+  <div class="ui-panel" style="max-width:580px">
+    <div class="ui-panel-head">
+      <span class="ui-panel-title">검색</span>
+      <button class="ui-panel-close" data-close="overlay-search">✕</button>
+    </div>
+    <div class="ui-panel-body">
+      <div class="search-input-wrap">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><line x1="20" y1="20" x2="16.65" y2="16.65"/></svg>
+        <input class="search-input" id="search-input" placeholder="섹션, 지표 이름으로 검색…" autocomplete="off">
+      </div>
+      <div class="search-results" id="search-results"></div>
+    </div>
+  </div>
+</div>
+
+<!-- 설정 오버레이 -->
+<div class="ui-overlay" id="overlay-settings">
+  <div class="ui-panel">
+    <div class="ui-panel-head">
+      <span class="ui-panel-title">설정</span>
+      <button class="ui-panel-close" data-close="overlay-settings">✕</button>
+    </div>
+    <div class="ui-panel-body">
+      <div class="settings-row">
+        <div><div class="settings-label">테마</div><div class="settings-sub">라이트 / 다크 모드</div></div>
+        <div class="toggle-wrap">
+          <button class="seg-pill on" id="theme-light" onclick="setTheme('light')">라이트</button>
+          <button class="seg-pill" id="theme-dark"  onclick="setTheme('dark')">다크</button>
+        </div>
+      </div>
+      <div class="settings-row">
+        <div><div class="settings-label">데이터 기준</div><div class="settings-sub" id="settings-data-date">최신 데이터: —</div></div>
+      </div>
+      <div class="settings-row">
+        <div><div class="settings-label">리포트 내보내기</div><div class="settings-sub">현재 화면을 PDF로 저장</div></div>
+        <button class="seg-pill on" onclick="doPrint()">인쇄 / PDF</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 알림 오버레이 -->
+<div class="ui-overlay" id="overlay-notif">
+  <div class="ui-panel" style="max-width:400px">
+    <div class="ui-panel-head">
+      <span class="ui-panel-title">알림</span>
+      <button class="ui-panel-close" data-close="overlay-notif">✕</button>
+    </div>
+    <div class="ui-panel-body" id="notif-body">
+      <div class="notif-item">
+        <div class="notif-dot"></div>
+        <div><div class="notif-text"><b>주간 퍼널 데이터</b> 업데이트 필요 — 이번 주 Looker Studio 데이터를 아직 입력하지 않았습니다.</div><div class="notif-time">매주 월요일</div></div>
+      </div>
+      <div class="notif-item">
+        <div class="notif-dot read"></div>
+        <div><div class="notif-text"><b>4월 AS 조치 현황</b> 데이터가 반영되었습니다.</div><div class="notif-time">2026.05.01</div></div>
+      </div>
+      <div class="notif-item">
+        <div class="notif-dot read"></div>
+        <div><div class="notif-text"><b>컨택센터 용역료</b> 4월 데이터가 반영되었습니다.</div><div class="notif-time">2026.04.30</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 원천 데이터 갱신 오버레이 -->
+<div class="ui-overlay" id="overlay-refresh">
+  <div class="ui-panel">
+    <div class="ui-panel-head">
+      <span class="ui-panel-title">원천 데이터 갱신 방법</span>
+      <button class="ui-panel-close" data-close="overlay-refresh">✕</button>
+    </div>
+    <div class="ui-panel-body">
+      <div class="refresh-step">
+        <div class="refresh-step-num">1</div>
+        <div class="refresh-step-text">Looker Studio에서 전주 AS 퍼널 데이터 확인<br><span style="color:var(--ink-4);font-size:11.5px">매주 월요일 조회</span></div>
+      </div>
+      <div class="refresh-step">
+        <div class="refresh-step-num">2</div>
+        <div class="refresh-step-text"><code>update_weekly_funnel.py</code> 실행하여 Excel 업데이트<br><span style="color:var(--ink-4);font-size:11.5px">python update_weekly_funnel.py --period "5.18~5.24" --reg … --view … 등</span></div>
+      </div>
+      <div class="refresh-step">
+        <div class="refresh-step-num">3</div>
+        <div class="refresh-step-text"><code>generate_dashboard.py</code> 실행하여 대시보드 재생성</div>
+      </div>
+      <div class="refresh-step">
+        <div class="refresh-step-num">4</div>
+        <div class="refresh-step-text">GitHub에 <code>git push</code> → GitHub Pages 자동 배포</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 토스트 -->
+<div class="toast" id="toast"></div>
+
+<script>
+// ── 오버레이 공통 열기/닫기 ──────────────────────────────────
+function openOverlay(id) {
+  document.getElementById(id).classList.add('open');
+}
+function closeOverlay(id) {
+  document.getElementById(id).classList.remove('open');
+}
+document.querySelectorAll('[data-close]').forEach(btn => {
+  btn.addEventListener('click', () => closeOverlay(btn.dataset.close));
+});
+document.querySelectorAll('.ui-overlay').forEach(el => {
+  el.addEventListener('click', e => { if (e.target === el) closeOverlay(el.id); });
+});
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') document.querySelectorAll('.ui-overlay.open').forEach(el => closeOverlay(el.id));
+});
+
+// ── 토스트 ───────────────────────────────────────────────────
+function showToast(msg, duration=2800) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), duration);
+}
+
+// ── 인쇄 / PDF ───────────────────────────────────────────────
+function doPrint() {
+  closeOverlay('overlay-settings');
+  setTimeout(() => window.print(), 200);
+}
+
+// ── 테마 토글 ────────────────────────────────────────────────
+function setTheme(theme) {
+  document.documentElement.setAttribute('data-theme', theme);
+  document.getElementById('theme-light').classList.toggle('on', theme === 'light');
+  document.getElementById('theme-dark').classList.toggle('on', theme  === 'dark');
+  if (window.__rebuildCharts) window.__rebuildCharts();
+}
+
+// ── 버튼 바인딩 ──────────────────────────────────────────────
+document.getElementById('btn-refresh').addEventListener('click', () => openOverlay('overlay-refresh'));
+document.getElementById('btn-export').addEventListener('click', () => { showToast('인쇄 창을 엽니다…'); setTimeout(doPrint, 400); });
+document.getElementById('btn-settings').addEventListener('click', () => {
+  const months = DATA.natMonths;
+  const latest = months.length ? months[months.length-1] : '—';
+  document.getElementById('settings-data-date').textContent = '최신 데이터: ' + latest;
+  openOverlay('overlay-settings');
+});
+document.getElementById('btn-export-top').addEventListener('click', () => { showToast('인쇄 창을 엽니다…'); setTimeout(doPrint, 400); });
+document.getElementById('btn-date').addEventListener('click', () => {
+  const months = DATA.natMonths;
+  const latest = months.length ? months[months.length-1] : '—';
+  showToast('현재 데이터 기준: ' + latest);
+});
+document.getElementById('btn-notif').addEventListener('click', () => openOverlay('overlay-notif'));
+document.getElementById('btn-search').addEventListener('click', () => {
+  openOverlay('overlay-search');
+  setTimeout(() => document.getElementById('search-input').focus(), 120);
+});
+
+// ── 검색 ─────────────────────────────────────────────────────
+const SEARCH_INDEX = [
+  {label:'Overview', sub:'전체 요약', tab:0},
+  {label:'전국 조치 건수',     sub:'AS 조치 현황', tab:1},
+  {label:'1차 종결률',        sub:'AS 조치 현황', tab:1},
+  {label:'N차율 (재방문율)',   sub:'AS 조치 현황', tab:1},
+  {label:'평균 조치기간',      sub:'AS 조치 현황', tab:1},
+  {label:'서울경인 조치 현황', sub:'AS 조치 현황', tab:1},
+  {label:'년도별 동월 비교',   sub:'AS 조치 현황', tab:1},
+  {label:'AS 신청 페이지 퍼널',sub:'퍼널 분석', tab:2},
+  {label:'단계별 유입 추이',   sub:'퍼널 분석', tab:2},
+  {label:'1→2 유입률',        sub:'퍼널 분석', tab:2},
+  {label:'4→5 유입률',        sub:'퍼널 분석', tab:2},
+  {label:'제품 등록 수',       sub:'퍼널 분석', tab:2},
+  {label:'컨택센터 용역료',    sub:'비용 분석', tab:3},
+  {label:'CS 용역료 상세',     sub:'비용 분석', tab:3},
+  {label:'처리 흐름',          sub:'비용 분석', tab:3},
+];
+
+document.getElementById('search-input').addEventListener('input', function() {
+  const q = this.value.trim().toLowerCase();
+  const box = document.getElementById('search-results');
+  if (!q) { box.innerHTML = ''; return; }
+  const hits = SEARCH_INDEX.filter(item =>
+    item.label.toLowerCase().includes(q) || item.sub.toLowerCase().includes(q)
+  );
+  if (!hits.length) {
+    box.innerHTML = '<div class="search-empty">검색 결과가 없습니다</div>';
+    return;
+  }
+  box.innerHTML = hits.map(h =>
+    `<div class="search-result-item" onclick="gotoTab(${h.tab});closeOverlay('overlay-search')">
+      <b>${h.label}</b><span>${h.sub}</span>
+    </div>`
+  ).join('');
+});
 </script>
 
 </body>
